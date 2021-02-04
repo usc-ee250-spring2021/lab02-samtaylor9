@@ -26,13 +26,29 @@ sys.path.append('../../Software/Python/grove_rgb_lcd')
 
 import grovepi
 
-"""This if-statement checks if you are running this python file directly. That
-is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will
-be true"""
+# Connect the Grove Rotary Angle Sensor to analog port A2
+# SIG,NC,VCC,GND
+potentiometer = 2
+grovepi.pinMode(potentiometer,"INPUT")
+time.sleep(1)
+
+# Vcc of the grove interface is normally 5v
+grove_vcc = 5
+
+# Full value of the rotary angle is 300 degrees, as per it's specs (0 to 300)
+full_angle = 300
+
+while True:
+    try:
+        # Read sensor value from potentiometer
+        sensor_value = grovepi.analogRead(potentiometer)
+        setText(sensor_value)
+
+# LCD help
 from grove_rgb_lcd import *
+setRGB(0,128,64)
 
 setText("Hello world\nLCD test")
-setRGB(0,128,64)
 
 # Slowly change the colors every 0.01 seconds.
 for c in range(0,255):
@@ -41,6 +57,11 @@ for c in range(0,255):
 
 setRGB(0,255,0)
 setText("Bye bye, this should wrap")
+
+"""This if-statement checks if you are running this python file directly. That
+is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will
+be true"""
+
 
 if __name__ == '__main__':
     PORT = 4    # D4
