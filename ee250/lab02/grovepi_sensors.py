@@ -38,13 +38,6 @@ grove_vcc = 5
 # Full value of the rotary angle is 300 degrees, as per it's specs (0 to 300)
 full_angle = 300
 
-while True:
-    try:
-        # Read sensor value from potentiometer
-        sensor_value = grovepi.analogRead(potentiometer)
-        setText(sensor_value)
-
-
 """This if-statement checks if you are running this python file directly. That
 is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will
 be true"""
@@ -58,4 +51,7 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        print(grovepi.ultrasonicRead(PORT))
+        # print(grovepi.ultrasonicRead(PORT))
+        # Read sensor value from potentiometer
+        sensor_value = grovepi.analogRead(potentiometer)
+        print(sensor_value)
