@@ -18,6 +18,7 @@ performance. Because of this, you will not find this in the default directories.
 """
 import sys
 import time
+from grove_rgb_lcd import *
 # By appending the folder of all the GrovePi libraries to the system path here,
 # we are successfully `import grovepi`
 sys.path.append('../../Software/Python/')
