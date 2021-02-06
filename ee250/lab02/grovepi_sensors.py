@@ -60,14 +60,12 @@ if __name__ == '__main__':
 
         # Read threshold value from potentiometer
         threshold_value = grovepi.analogRead(potentiometer)
-        print(threshold_value)
 
         # Measure distance to object from ultrasonic ranger
         distance_to_object = (grovepi.ultrasonicRead(ultrasonic_ranger))
-        print(distance_to_object)
 
         # Determines whether the object is within threshold distance
         if threshold_value > distance_to_object:
             setText_norefresh("%4dcm OBJ PRES\n%3dcm" % (threshold_value, distance_to_object))
         else:
-            setText_norefresh("%3dcm         \n%3dcm" % (threshold_value, distance_to_object))
+            setText_norefresh("%4dcm         \n%3dcm" % (threshold_value, distance_to_object))
