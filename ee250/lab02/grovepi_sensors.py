@@ -35,9 +35,9 @@ be true"""
 if __name__ == '__main__':
     setText("Samantha Taylor\nEE250 Lab 2")
 
-    # Connect the Grove Rotary Angle Sensor to analog port A2
+    # Connect the Grove Rotary Angle Sensor to analog port A0
     # SIG,NC,VCC,GND
-    potentiometer = 2
+    potentiometer = 0
     grovepi.pinMode(potentiometer,"INPUT")
     time.sleep(1)
 
