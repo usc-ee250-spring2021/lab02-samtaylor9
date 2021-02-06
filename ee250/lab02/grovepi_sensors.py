@@ -34,6 +34,7 @@ be true"""
 
 if __name__ == '__main__':
     setText("Samantha Taylor\nEE250 Lab 2")
+    time.sleep(1)
     setText(" ")
 
     # Connect the Grove Rotary Angle Sensor to analog port A0
@@ -66,6 +67,6 @@ if __name__ == '__main__':
 
         # Determines whether the object is within threshold distance
         if threshold_value > distance_to_object:
-            setText_norefresh("%4dcm OBJ PRES\n%3dcm" % (threshold_value, distance_to_object))
+            setText_norefresh("%4dcm OBJ PRES\n%4dcm" % (threshold_value, distance_to_object))
         else:
-            setText_norefresh("%4dcm         \n%3dcm" % (threshold_value, distance_to_object))
+            setText_norefresh("%4dcm         \n%4dcm" % (threshold_value, distance_to_object))
