@@ -33,6 +33,8 @@ be true"""
 
 
 if __name__ == '__main__':
+
+    # Initial Screen
     setText("Samantha Taylor\nEE250 Lab 2")
     time.sleep(1)
     setText(" ")
@@ -41,7 +43,6 @@ if __name__ == '__main__':
     # SIG,NC,VCC,GND
     potentiometer = 0
     grovepi.pinMode(potentiometer,"INPUT")
-    time.sleep(1)
 
     # Vcc of the grove interface is normally 5v
     grove_vcc = 5
